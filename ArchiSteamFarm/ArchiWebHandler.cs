@@ -271,7 +271,7 @@ namespace ArchiSteamFarm {
 				}
 
 				if (appID == 0) {
-					appID = description["appid"].AsUnsignedInteger();
+					appID = description[""].AsUnsignedInteger();
 				}
 
 				Steam.Asset.EType type = Steam.Asset.EType.Unknown;
