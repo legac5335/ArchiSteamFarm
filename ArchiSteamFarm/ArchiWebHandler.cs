@@ -281,7 +281,7 @@ namespace ArchiSteamFarm {
 					type = GetItemType(descriptionType);
 				}
 
-				descriptions[classID] = (appID, type);
+				descriptions[classID] = (appID, appID);
 			}
 
 			HashSet<Steam.TradeOffer> result = new HashSet<Steam.TradeOffer>();
