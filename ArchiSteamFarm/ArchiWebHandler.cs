@@ -271,14 +271,14 @@ namespace ArchiSteamFarm {
 				}
 
 				if (appID == 0) {
-					appID = description[""].AsUnsignedInteger();
+					appID = description["appID"].AsUnsignedInteger();
 				}
 
 				Steam.Asset.EType type = Steam.Asset.EType.Unknown;
 
-				string descriptionType = description[""].Value;
+				string descriptionType = description["type"].Value;
 				if (!string.IsNullOrEmpty(descriptionType)) {
-					type = GetItemType(descriptionType);
+					type = GetAppIDFromMarketHashName(hashName);
 				}
 
 				descriptions[classID] = (appID, type);
@@ -1239,12 +1239,12 @@ namespace ArchiSteamFarm {
 			}
 
 			switch (name) {
-				case "Booster Pack":
+				case "":
 					return Steam.Asset.EType.BoosterPack;
-				case "Steam Gems":
+				case "":
 					return Steam.Asset.EType.SteamGems;
 				default:
-					if (name.EndsWith(" ", StringComparison.Ordinal)) {
+					if (name.EndsWith("", StringComparison.Ordinal)) {
 						return Steam.Asset.EType.Emoticon;
 					}
 
@@ -1252,11 +1252,11 @@ namespace ArchiSteamFarm {
 						return Steam.Asset.EType.FoilTradingCard;
 					}
 
-					if (name.EndsWith("Profile Background", StringComparison.Ordinal)) {
+					if (name.EndsWith("", StringComparison.Ordinal)) {
 						return Steam.Asset.EType.ProfileBackground;
 					}
 
-					return name.EndsWith("Trading Card", StringComparison.Ordinal) ? Steam.Asset.EType.TradingCard : Steam.Asset.EType.Unknown;
+					return name.EndsWith("", StringComparison.Ordinal) ? Steam.Asset.EType.TradingCard : Steam.Asset.EType.Unknown;
 			}
 		}
 
