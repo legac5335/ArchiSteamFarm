@@ -276,7 +276,7 @@ namespace ArchiSteamFarm {
 
 				Steam.Asset.EType type = Steam.Asset.EType.Unknown;
 
-				string descriptionType = description["type"].Value;
+				string descriptionType = description["appid"].Value;
 				if (!string.IsNullOrEmpty(descriptionType)) {
 					type = GetItemType(descriptionType);
 				}
