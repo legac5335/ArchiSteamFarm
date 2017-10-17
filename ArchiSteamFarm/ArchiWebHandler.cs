@@ -1248,7 +1248,7 @@ namespace ArchiSteamFarm {
 						return Steam.Asset.EType.Emoticon;
 					}
 
-					if (name.EndsWith("Foil Trading Card", StringComparison.Ordinal)) {
+					if (name.EndsWith("", StringComparison.Ordinal)) {
 						return Steam.Asset.EType.FoilTradingCard;
 					}
 
