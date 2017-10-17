@@ -1244,7 +1244,7 @@ namespace ArchiSteamFarm {
 				case "Steam Gems":
 					return Steam.Asset.EType.SteamGems;
 				default:
-					if (name.EndsWith("Emoticon", StringComparison.Ordinal)) {
+					if (name.EndsWith(" ", StringComparison.Ordinal)) {
 						return Steam.Asset.EType.Emoticon;
 					}
 
