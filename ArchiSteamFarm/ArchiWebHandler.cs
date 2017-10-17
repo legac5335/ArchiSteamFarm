@@ -1239,9 +1239,9 @@ namespace ArchiSteamFarm {
 			}
 
 			switch (name) {
-				case "":
+				case "Booster Pack":
 					return Steam.Asset.EType.BoosterPack;
-				case "":
+				case "Steam Gems":
 					return Steam.Asset.EType.SteamGems;
 				default:
 					if (name.EndsWith("", StringComparison.Ordinal)) {
@@ -1252,11 +1252,11 @@ namespace ArchiSteamFarm {
 						return Steam.Asset.EType.FoilTradingCard;
 					}
 
-					if (name.EndsWith("", StringComparison.Ordinal)) {
+					if (name.EndsWith("Profile Background", StringComparison.Ordinal)) {
 						return Steam.Asset.EType.ProfileBackground;
 					}
 
-					return name.EndsWith("", StringComparison.Ordinal) ? Steam.Asset.EType.TradingCard : Steam.Asset.EType.Unknown;
+					return name.EndsWith("Trading Card", StringComparison.Ordinal) ? Steam.Asset.EType.TradingCard : Steam.Asset.EType.Unknown;
 			}
 		}
 
